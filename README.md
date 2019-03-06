@@ -1,7 +1,7 @@
 # Demultiplexer for Quartz-Seq2
 
 ## Requirements
-### system (elwood)
+### system
 * docker
 * docker wrapper for Open Grid Scheduler
 
