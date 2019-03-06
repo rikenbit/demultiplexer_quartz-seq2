@@ -1,0 +1,20 @@
+params:
+  work: work
+  lib: lib
+  bin: bin
+  results: results
+  db:
+    fastq_dir: /data2/itoshi/demultiplexer/data/fastq
+    barcode_list: /data2/itoshi/demultiplexer/data/20180510_768CB.unix.txt
+  process:
+    cpu: 4
+    nc: 4
+    queue: node.q
+    clusterOptions: '-S /bin/bash'
+  docker:
+    run:  docker run --rm -u 10000:10000 -w $PWD
+    image:
+      picard: fs000:5000/danno/picard:1.0
+      R: fs000:5000/danno/pyper:1.2
+      samtools: fs000:5000/itoshi/samtools
+      ruby: fs000:5000/itoshi/ruby:2.5.1
